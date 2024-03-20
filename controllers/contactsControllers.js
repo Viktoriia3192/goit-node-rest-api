@@ -26,9 +26,7 @@ export const deleteContact = ctrlWrapper(async (req, res) => {
          if (!result) {
         throw HttpError(404);
          }
-        res.json({
-            message: "Delete success"
-        })
+    res.json(result);
 
 });
 
