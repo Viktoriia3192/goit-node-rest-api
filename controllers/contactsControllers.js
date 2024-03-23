@@ -22,7 +22,7 @@ export const getOneContact = ctrlWrapper(async (req, res) => {
 export const deleteContact = ctrlWrapper(async (req, res) => {
  
     const { id } = req.params;
-    const [result] = await contactsService.removeContact(id);
+    const result = await contactsService.removeContact(id);
          if (!result) {
         throw HttpError(404);
          }
