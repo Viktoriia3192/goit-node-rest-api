@@ -45,8 +45,8 @@ async function updateContactById(id, body) {
     (contact) => contact.id === contactIdSrt
   );
   if (contactIdx === -1) return null;
-  allContacts[contactIdx] = { id: id, ...body };
-  await fs.writeFile(contactsPath, JSON.stringify(allContacts));
+  allContacts[contactIdx] = { ...allContacts[contactIdx], ...body };
+  await fs.writeFile(contactsPath, JSON.stringify(allContacts, null, 2));
   return allContacts[contactIdx];
 }
 
