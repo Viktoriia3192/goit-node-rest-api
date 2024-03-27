@@ -17,6 +17,9 @@ const contactSchema = new Schema(
             type: Boolean,
             default: false,
         },
+    },
+      {
+        versionKey: false
     }
 );
 
@@ -27,5 +30,6 @@ contactSchema.pre("findOneAndUpdate", setUpdateSettings);
 contactSchema.post("findOneAndUpdate", handleSaveError);
 
 const Contact = model("contact", contactSchema);
+
 export default Contact;
 
