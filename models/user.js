@@ -1,3 +1,4 @@
+
 import { Schema, model } from "mongoose";
 import handleMongooseError from "../helpers/handleMongooseError.js"
 import { emailRegexp } from "../schemas/usersSchemas.js";
@@ -35,6 +36,3 @@ userSchema.post("save", handleMongooseError);
 export const User = model("user", userSchema);
 
 export default User;
-
-
-
