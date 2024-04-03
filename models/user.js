@@ -1,3 +1,4 @@
+
 import { Schema, model } from "mongoose";
 import handleMongooseError from "../helpers/handleMongooseError.js"
 import { emailRegexp } from "../schemas/usersSchemas.js";
@@ -23,6 +24,10 @@ const userSchema = new Schema ({
         type: String,
         default: null,
       },
+      avatarURL: {
+        type: String,
+        required: true,
+       },
       
 }, {versionKey: false , timestamps: false}
 )
